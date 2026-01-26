@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АвтоПодбор - Подбор авто</title>
+    <link rel="stylesheet" href="godex.css">
+</head>
+
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="index.htm">Главная</a></li>
+            <li><a href="info.htm">Новости</a></li>
+            <li><a href="podbor.htm" class="active">Подбор авто</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Подбор по бюджету и опыту</h1>
+        <form>
+            <label>Бюджет (руб.):</label>
+            <select>
+                <option>До 200 000</option>
+                <option>200 000 - 800 000</option>
+                <option>Свыше 800 000</option>
+            </select>
+            <label>Опыт вождения:</label>
+            <select>
+                <option>Новичок</option>
+                <option>1-3 года</option>
+                <option>Более 3 лет</option>
+            </select>
+            <button type="button">Подобрать</button>
+        </form>
+        <section>
+            <h2>Рекомендации для новичков</h2>
+            <table>
+                <tr>
+                    <th>Модель</th>
+                    <th>Цена от</th>
+                    <th>Особенности</th>
+                </tr>
+                <tr>
+                    <td>Lada Granta</td>
+                    <td>150 000 руб.</td>
+                    <td>Дешевое обслуживание</td>
+                </tr>
+                <tr>
+                    <td>Hyundai Solaris</td>
+                    <td>500 000 руб.</td>
+                    <td>Надежность, комфорт</td>
+                </tr>
+                <tr>
+                    <td>Kia Picanto</td>
+                    <td>300 000 руб.</td>
+                    <td>Компактный для города</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>

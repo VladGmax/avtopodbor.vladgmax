@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #e7e7e7b4;
+    color: #000;
+    line-height: #e7e7e7b4;;
+}
+
+.menu {
+    background: #000;
+    padding: 0;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    margin: 0 20px;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+    background: #c00;
+    /* Красный */
+    color: #fff;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    color: #00f;
+    /* Синий */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #c00;
+    margin: 30px 0 15px;
+}
+
+p,
+li {
+    margin-bottom: 10px;
+}
+
+form {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+select,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000;
+    background: #fff;
+}
+
+button {
+    background: #00f;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #c00;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #000;
+    color: #fff;
+}
+
+article {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-left: 4px solid #00f;
+}
+
+.menu {
+    background: #000;
+    padding: 10px 0;
+    position: relative;
+}
+
+.menu::before {
+    content: '';
+    background-image: url('ikonka.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-left: 80px;
+    /* Отступ для иконки */
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 20px;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+    background: #c00;
+    color: #fff;
+}
