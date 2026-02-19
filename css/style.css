@@ -1,0 +1,404 @@
+/* Общие стили */
+* {
+    margin: 0; /*убирает внешние отступы*/
+    padding: 0; /*убирает внутренние отступы*/
+    box-sizing: border-box; /*Браузер прибавит отступы и рамку к основной ширине*/
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* какой шрифт*/
+    line-height: 1.6; /*межстрочный интервал*/                                /* */
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Меню */
+header {
+    background-color: #003366; /* Темно-синий */
+    color: white;
+    padding: 3rem 0; /*делает шапку довольно высокой (внутренние отступы сверху и снизу по 3 условных единицы*/
+    position: sticky; /* фиксированная позиция*/
+    top: 0;
+    z-index: 100; /*шапка будет «выше» всех остальных элементов и ничего не перекроет её сверху*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.102);
+}
+
+.logo {
+    float: left; /*выравнивание по левому краю*/
+    font-size: 1.5rem; /*размер шрифта*/
+    font-weight: bold; /*жирный шрифт*/
+    margin-left: 2rem; /*отступ от  левого края окна*/
+    line-height: 2;
+    color: white; 
+}
+
+nav {
+    float: right;
+    margin-right: 2rem;
+}
+
+nav ul {
+    list-style: none; /*убирает маркеры*/
+    display: flex; /*в одну линию*/
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; /*убирает стандартное нижнее подчеркивание у ссылки*/
+    padding: 0.5rem 1rem;
+    border-radius: 4px; /*скругление углов*/
+    transition: background-color 0.3s; /*плавность фона */
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #cc0000; /* Красный */
+    color: white; /* Исправлено */
+}
+
+/* Основной контент */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Главная страница */
+.hero {
+    text-align: center;
+    margin-bottom: 3rem; /*отступ снизу*/
+    background: linear-gradient(135deg, #003366 0%, #001a33 100%);
+    color: white;
+    padding: 3rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /*тень*/
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    margin-top: 2rem; /*отступ сверху*/
+}
+
+.hero-image img {
+    max-width: 100%; /*Если экран узкий (например, на телефоне),
+        картинка автоматически сожмется,
+        чтобы не вылезти за края*/
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s; /*Это «подготовка» к анимации. Оно говорит браузеру: «Если масштаб или положение картинки изменятся, делай это плавно в течение 0.3 секунды»*/
+}
+
+.hero-image img:hover {
+    transform: scale(1.02); /*увелечение размера изображения*/
+}
+
+.info {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.info h2 {
+    color: #003366;
+    margin-bottom: 1rem;
+}
+
+.info ul {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.info ul li {
+    margin-bottom: 0.5rem;
+}
+
+.features {
+    text-align: center; /*текст по центру*/
+}
+
+.feature-grid {
+    display: grid; /*режим сетки*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /*адаптивность карточек*/
+    gap: 2rem; /*расстояние между карточками*/
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.feature-card h3 {
+    color: #cc0000;
+    margin-bottom: 1rem;
+}
+
+/* Страница новостей */
+.news-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.news-header h1 {
+    color: #003366;
+    margin-bottom: 0.5rem;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.news-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /*обрезка картинки*/
+}
+
+.news-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    color: #003366;
+}
+
+.news-card p {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.date {
+    display: block;
+    padding: 0 1rem 1rem;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+/* Страница подбора авто */
+.selection-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.selection-header h1 {
+    color: #003366;
+    margin-bottom: 0.5rem;
+}
+
+.budget-cars h2 {
+    color: #003366;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.car-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden; /*Если картинка внутри карточки имеет острые углы,
+        это свойство «обрежет» их по радиусу карточки (10px). Ничего не будет вылезать за границы*/
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.car-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.car-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    color: #003366;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #cc0000;
+    margin-bottom: 1rem;
+}
+
+.specs {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+}
+
+.specs p {
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.more-info-btn {
+    background-color: #003366;
+    color: white;
+    border: none; /*рамка вокруг*/
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer; /*вид курсора*/
+    margin: 1rem 0;
+    transition: background-color 0.3s;
+}
+
+.more-info-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Отзывы */
+.reviews h2 {
+    color: #003366;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.review-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.review-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-left: 4px solid #cc0000;
+}
+
+.review-card h4 {
+    color: #003366;
+    margin-bottom: 0.5rem;
+}
+
+.car-model {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.rating {
+    color: #ffcc00;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Футер */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .logo {
+        float: none;
+        text-align: center;
+        margin: 0;
+        padding: 0.5rem 0;
+    }
+    
+    nav {
+        float: none; /*обтекание элемента*/
+        margin: 0;
+        text-align: center;
+    }
+    
+    nav ul {
+        justify-content: center; /*выравнивание по центру карточек*/
+        flex-wrap: wrap; /*разрешает элементам переноситься на новую строку*/
+    }
+    
+    nav ul li {
+        margin: 0.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    /*группировка селекторов*/
+    .feature-grid,
+    .news-grid,
+    .car-grid,
+    .review-container {
+        grid-template-columns: 1fr; /*один элемент занимает всю ширину экрана*/
+    }
+}
+
+/* Анимации плавного появления */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero,
+.info,
+.features,
+.news-grid,
+.car-grid,
+.review-container {
+    animation: fadeIn 0.8s ease-out; /*замедление анимации*/
+}
+
+/* Карточки с задержкой анимации и появлением лесенкой*/
+.feature-grid > div:nth-child(1) /*выбор конкретного блока*/ { animation-delay: 0.1s; } /*время ожидания перед стартом анимации*/
+.feature-grid > div:nth-child(2) { animation-delay: 0.2s; }
+.feature-grid > div:nth-child(3) { animation-delay: 0.3s; }
+
+.car-grid > div:nth-child(1) { animation-delay: 0.1s; }
+.car-grid > div:nth-child(2) { animation-delay: 0.2s; }
+.car-grid > div:nth-child(3) { animation-delay: 0.3s; }
+.car-grid > div:nth-child(4) { animation-delay: 0.4s; }
