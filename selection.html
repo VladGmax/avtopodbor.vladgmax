@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подбор автомобиля - АвтоПодбор</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Горизонтальное меню -->
+    <header>
+        <div class="logo">АвтоПодбор</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="selection.html" class="active">Подбор авто</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <section class="selection-header">
+            <h1>Подбор автомобиля</h1>
+            <p>Выберите автомобиль, который подходит именно вам</p>
+        </section>
+
+        <!-- Фильтр -->
+        <section class="filter-section"> <!-- Создает отдельный логический раздел на странице (секцию), посвященный фильтрам-->
+            <h2>Фильтр по параметрам</h2>
+            <div class="filters"> <!--  Контейнер, в котором будут лежать все будущие фильтры-->
+                <div class="filter-group"> <!--  Группирует подпись и выпадающий список, чтобы их было удобно оформить вместе (например, сделать отступы)-->
+                    <label for="level">Уровень вождения:</label> <!-- Текстовая метка. Атрибут for="level" связывает её со списком (если нажать на текст, список откроется)-->
+                    <select id="level"> <!--  Cоздает сам выпадающий список. ID используется для того, чтобы потом через JavaScript узнать, что выбрал пользователь-->
+                        <option value="all">Все уровни</option> <!-- Варианты выбора-->
+                        <option value="beginner">Новичок</option>
+                        <option value="medium">Средний</option>
+                        <option value="expert">Опытный</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="price">Цена:</label>
+                    <select id="price">
+                        <option value="all">Все цены</option>
+                        <option value="500-1000">500тыс.-1млн.руб.</option>
+                        <option value="1000-1500">1-1,5млн.руб.</option>
+                        <option value="1500-3000">1,5-3млн.руб.</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="brand">Марка авто:</label>
+                    <select id="brand">
+                        <option value="all">Все марки</option>
+                        <option value="lada">Лада</option>
+                        <option value="ford">Ford</option>
+                        <option value="toyota">Toyota</option>
+                    </select>
+                </div>
+                
+                <button class="filter-button" onclick="applyFilters()">Применить фильтры</button>
+            </div>
+        </section>
+
+        <!-- Раздел с автомобилями -->
+        <section class="cars-section">
+            <h2>Каталог автомобилей</h2>
+            
+            <div class="car-grid">
+                <!-- Приора -->
+                <div class="car-card" data-brand="lada" data-level="beginner" data-price="500-1000"> <!-- Data Атрибуты. Они не видны пользователю, но их «видит» JavaScript.
+Когда вы нажимаете кнопку «Применить фильтры», скрипт сравнивает выбранные вами параметры с этими значениями. Если они совпадают, карточка остается, если нет — скрывается.-->
+                    <img src="images/priora.jpg" alt="Лада Приора">
+                    <h3>Лада Приора</h3>
+                    <p class="price">от 450 000 ₽</p>
+                    <div class="specs"> <!--  Блок технических характеристик-->
+                        <p><strong>Год выпуска:</strong> 2014</p> <!-- Делает текст внутри жирным-->
+                        <p><strong>Тип кузова:</strong> Седан</p>
+                        <p><strong>Трансмиссия:</strong> механическая</p>
+                        <p><strong>Привод:</strong> передний</p>
+                        <p><strong>Двигатель:</strong> бензин, 1.6 л, 98 л.с.</p>
+                        <p><strong>Расход по трассе:</strong> 5.0 л/100км</p>
+                    </div>
+                    <div class="description"> <!-- Краткое описание целевой аудитории (кому подходит это авто)-->
+                        <h4>Для кого подходит:</h4>
+                        <p>Автомобиль для тех, кому нужен бюджетный, простой в ремонте и обслуживании транспорт с доступными запчастями.</p>
+                    </div>
+                    <button class="more-info-btn" data-wiki="Лада_Приора">Подробнее</button> <!-- Кнопка для взаимодействия-->
+                </div>
+
+                <!-- Гранта -->
+                <div class="car-card" data-brand="lada" data-level="beginner" data-price="500-1000">
+                    <img src="images/granta.jpg" alt="Лада Гранта">
+                    <h3>Лада Гранта</h3>
+                    <p class="price">от 530 000 ₽</p>
+                    <div class="specs">
+                        <p><strong>Год выпуска:</strong> 2014</p>
+                        <p><strong>Тип кузова:</strong> Седан</p>
+                        <p><strong>Трансмиссия:</strong> механическая</p>
+                        <p><strong>Привод:</strong> передний</p>
+                        <p><strong>Двигатель:</strong> бензин, 1.6 л, 106 л.с.</p>
+                        <p><strong>Расход по трассе:</strong> 7.0 л/100км</p>
+                    </div>
+                    <div class="description">
+                        <h4>Для кого подходит:</h4>
+                        <p>Подходит широкому кругу покупателей, в первую очередь для тех, кто ищет доступный, надёжный, простой в обслуживании автомобиль.</p>
+                    </div>
+                    <button class="more-info-btn" data-wiki="Лада_Гранта">Подробнее</button>
+                </div>
+
+                <!-- Калина -->
+                <div class="car-card" data-brand="lada" data-level="beginner" data-price="500-1000">
+                    <img src="images/kalina.jpg" alt="Лада Калина">
+                    <h3>Лада Калина</h3>
+                    <p class="price">от 400 000 ₽</p>
+                    <div class="specs">
+                        <p><strong>Год выпуска:</strong> 2014</p>
+                        <p><strong>Тип кузова:</strong> Универсал</p>
+                        <p><strong>Трансмиссия:</strong> механическая</p>
+                        <p><strong>Привод:</strong> передний</p>
+                        <p><strong>Двигатель:</strong> бензин, 1.6 л, 98 л.с.</p>
+                        <p><strong>Расход по трассе:</strong> 8.0 л/100км</p>
+                    </div>
+                    <div class="description">
+                        <h4>Для кого подходит:</h4>
+                        <p>Подходит широкому кругу водителей, особенно тем, кто ищет доступный, универсальный и простой в обслуживании транспорт.</p>
+                    </div>
+                    <button class="more-info-btn" data-wiki="Лада_Калина">Подробнее</button>
+                </div>
+
+                <!-- Focus -->
+                <div class="car-card" data-brand="ford" data-level="medium" data-price="1000-1500">
+                    <img src="images/focus.jpg" alt="Ford Focus">
+                    <h3>Ford Focus</h3>
+                    <p class="price">от 950 000 ₽</p>
+                    <div class="specs">
+                        <p><strong>Год выпуска:</strong> 2018</p>
+                        <p><strong>Тип кузова:</strong> Седан</p>
+                        <p><strong>Трансмиссия:</strong> робот</p>
+                        <p><strong>Привод:</strong> передний</p>
+                        <p><strong>Двигатель:</strong> бензин, 1.6 л, 125 л.с.</p>
+                        <p><strong>Расход по трассе:</strong> 7.2 л/100км</p>
+                    </div>
+                    <div class="description">
+                        <h4>Для кого подходит:</h4>
+                        <p>Подходит для широкого круга водителей: от молодых людей, ценящих хорошую управляемость, до семей.</p>
+                    </div>
+                    <button class="more-info-btn" data-wiki="Ford_Focus">Подробнее</button>
+                </div>
+
+                <!-- Mondeo -->
+                <div class="car-card" data-brand="ford" data-level="expert" data-price="1500-3000">
+                    <img src="images/mondeo.jpg" alt="Ford Mondeo">
+                    <h3>Ford Mondeo</h3>
+                    <p class="price">от 1 100 000 ₽</p>
+                    <div class="specs">
+                        <p><strong>Год выпуска:</strong> 2013</p>
+                        <p><strong>Тип кузова:</strong> Седан</p>
+                        <p><strong>Трансмиссия:</strong> автоматическая</p>
+                        <p><strong>Привод:</strong> передний</p>
+                        <p><strong>Двигатель:</strong> бензин, 2.0 л, 200 л.с.</p>
+                        <p><strong>Расход по трассе:</strong> 12.0 л/100км</p>
+                    </div>
+                    <div class="description">
+                        <h4>Для кого подходит:</h4>
+                        <p>Подходит для тех, кто ищет просторный, комфортный и недорогой автомобиль среднего класса для семьи или работы.</p>
+                    </div>
+                    <button class="more-info-btn" data-wiki="Ford_Mondeo">Подробнее</button>
+                </div>
+
+                <!-- Fusion -->
+                <div class="car-card" data-brand="ford" data-level="medium" data-price="1000-1500">
+                    <img src="images/fusion.jpg" alt="Ford Fusion">
+                    <h3>Ford Fusion</h3>
+                    <p class="price">от 1 200 000 ₽</p>
+                    <div class="specs">
+                        <p><strong>Год выпуска:</strong> 2014</p>
+                        <p><strong>Тип кузова:</strong> Седан</p>
+                        <p><strong>Трансмиссия:</strong> автоматическая</p>
+                        <p><strong>Привод:</strong> передний</p>
+                        <p><strong>Двигатель:</strong> бензин, 2.5 л, 175 л.с.</p>
+                        <p><strong>Расход по трассе:</strong> 7.5 л/100км</p>
+                    </div>
+                    <div class="description">
+                        <h4>Для кого подходит:</h4>
+                        <p>Подходит для тех, кто ищет надежный, экономичный и технологичный семейный седан с хорошим соотношением цены и качества.</p>
+                    </div>
+                    <button class="more-info-btn" data-wiki="Ford_Fusion">Подробнее</button>
+                </div>
+
+                <!-- Camry -->
+                <div class="car-card" data-brand="toyota" data-level="medium" data-price="1500-3000">
+                    <img src="images/camry.jpg" alt="Toyota Camry">
+                    <h3>Toyota Camry</h3>
+                    <p class="price">от 1 800 000 ₽</p>
+                    <div class="specs">
+                        <p><strong>Год выпуска:</strong> 2016</p>
+                        <p><strong>Тип кузова:</strong> Седан</p>
+                        <p><strong>Трансмиссия:</strong> автоматическая</p>
+                        <p><strong>Привод:</strong> передний</p>
+                        <p><strong>Двигатель:</strong> бензин, 2.5 л, 181 л.с.</p>
+                        <p><strong>Расход по трассе:</strong> 8.0 л/100км</p>
+                    </div>
+                    <div class="description">
+                        <h4>Для кого подходит:</h4>
+                        <p>Подходит семьям, бизнес-пользователям и тем, кто ценит надежность, комфорт и простор.</p>
+                    </div>
+                    <button class="more-info-btn" data-wiki="Toyota_Camry">Подробнее</button>
+                </div>
+
+                <!-- Corolla -->
+                <div class="car-card" data-brand="toyota" data-level="beginner" data-price="1000-1500">
+                    <img src="images/corolla.jpg" alt="Toyota Corolla">
+                    <h3>Toyota Corolla</h3>
+                    <p class="price">от 1 100 000 ₽</p>
+                    <div class="specs">
+                        <p><strong>Год выпуска:</strong> 2017</p>
+                        <p><strong>Тип кузова:</strong> Седан</p>
+                        <p><strong>Трансмиссия:</strong> вариаторная</p>
+                        <p><strong>Привод:</strong> передний</p>
+                        <p><strong>Двигатель:</strong> бензин, 1.8 л, 140 л.с.</p>
+                        <p><strong>Расход по трассе:</strong> 5.6 л/100км</p>
+                    </div>
+                    <div class="description">
+                        <h4>Для кого подходит:</h4>
+                        <p>Подходит почти всем, кто ищет надежный, экономичный и практичный автомобиль для города и семьи.</p>
+                    </div>
+                    <button class="more-info-btn" data-wiki="Toyota_Corolla">Подробнее</button>
+                </div>
+
+                <!-- RAV4 -->
+                <div class="car-card" data-brand="toyota" data-level="medium" data-price="1500-3000">
+                    <img src="images/rav4.jpg" alt="Toyota RAV4">
+                    <h3>Toyota RAV4</h3>
+                    <p class="price">от 2 200 000 ₽</p>
+                    <div class="specs">
+                        <p><strong>Год выпуска:</strong> 2020</p>
+                        <p><strong>Тип кузова:</strong> SUV</p>
+                        <p><strong>Трансмиссия:</strong> вариаторная</p>
+                        <p><strong>Привод:</strong> 4WD</p>
+                        <p><strong>Двигатель:</strong> бензин, гибрид, 2.5 л, 178 л.с.</p>
+                        <p><strong>Расход по трассе:</strong> 5.5 л/100км</p>
+                    </div>
+                    <div class="description">
+                        <h4>Для кого подходит:</h4>
+                        <p>Подходит для семей, горожан и любителей активного отдыха, ценящих надежность, комфорт и универсальность.</p>
+                    </div>
+                    <button class="more-info-btn" data-wiki="Toyota_RAV4">Подробнее</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Отзывы владельцев -->
+        <section class="reviews"> <!-- Отдельная область страницы для отзывов-->
+            <h2>Отзывы владельцев</h2>
+            <div class="review-container">
+                <div class="review-card">
+                    <h4>Алексей Петров</h4>
+                    <p class="car-model">Лада Приора 2014</p> <!-- подпись, о какой именно машине идет речь-->
+                    <p>"Отличный автомобиль за свои деньги. Надежный, экономичный, комфортный для города. Не пожалел о покупке!"</p>
+                    <div class="rating">★★★★★</div>
+                </div>
+
+                <div class="review-card">
+                    <h4>Мария Сидорова</h4>
+                    <p class="car-model">Toyota Corolla 2017</p>
+                    <p>"Покупала для поездок на работу. Не подводит ни разу. Удобный салон и хорошая шумоизоляция. Очень довольна!"</p>
+                    <div class="rating">★★★★☆</div> <!-- Визуальная оценка. Звездочки (★)-->
+                </div>
+
+                <div class="review-card">
+                    <h4>Дмитрий Козлов</h4>
+                    <p class="car-model">Ford Focus 2018</p>
+                    <p>"Автомобиль очень понравился, я относился к нему хуже, он действительно для тех, кто любит и кайфует от вождения."</p>
+                    <div class="rating">★★★★★</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Низ сайта -->
+    <footer>
+        <p>&copy; 2026 АвтоПодбор. Все права защищены.</p>
+    </footer>
+
+    <!-- Подключение JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости - АвтоПодбор</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Горизонтальное меню -->
+    <header>
+        <div class="logo">АвтоПодбор</div> <!-- Логотип-->
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="news.html" class="active">Новости</a></li>
+                <li><a href="selection.html">Подбор авто</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <section class="news-header"> <!-- Имя контейнера для CSS-->
+            <h1>Новости автомобильного мира</h1>
+            <p>Следите за последними событиями в мире автомобилей</p>
+        </section>
+
+        <section class="news-grid"> <!-- Имя контейнера для CSS-->
+            <article class="news-card"> <!-- Представляет независимый, самодостаточный фрагмент контента (отдельная новость)-->
+                <img src="images/car_news1.jpg" alt="Электромобиль">
+                <h3>Электромобили становятся популярнее</h3>
+                <p>В 2026 году продажи электромобилей выросли на 35% по сравнению с прошлым годом...</p>
+                <span class="date">15 января 2026</span>
+            </article>
+
+            <article class="news-card">
+                <img src="images/car_news2.jpg"  alt="Новый седан">
+                <h3>Выпуск нового седана премиум-класса</h3>
+                <p>Компания представила новый седан с улучшенной системой безопасности и экономичным двигателем...</p>
+                <span class="date">12 января 2026</span> <!-- Встраиваемый контейнер для текста, используемый для применения стилей к определенной части-->
+            </article>
+
+            <article class="news-card">
+                <img src="images/car_news3.jpg"  alt="Гибрид">
+                <h3>Гибридные технологии в массовом сегменте</h3>
+                <p>Производители активно внедряют гибридные двигатели в бюджетные модели...</p>
+                <span class="date">8 января 2026</span>
+            </article>
+
+            <article class="news-card">
+                <img src="images/car_news4.jpg"  alt="Безопасность">
+                <h3>Новые стандарты безопасности</h3>
+                <p>С 2026 года все новые автомобили должны соответствовать расширенным требованиям...</p>
+                <span class="date">5 января 2026</span>
+            </article>
+        </section>
+    </main>
+
+    <!-- Низ сайта -->
+    <footer>
+        <p>&copy; 2026 АвтоПодбор. Все права защищены.</p>
+    </footer>
+
+    <!-- Подключение JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
